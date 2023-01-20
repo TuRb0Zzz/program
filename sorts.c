@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 #include "sorts.h"
+
 void insertionSort(int* ar,int  size){
     int num;
     int pos;

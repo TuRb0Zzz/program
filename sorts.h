@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
-#ifindef _sorts_h_
-#define _sorts_h_
+#ifndef SORTS_H
+#define SORTS_H
 
-void insertionSort(int* ar,int  size){}
+void insertionSort(int* ar,int  size);
+
+#endif

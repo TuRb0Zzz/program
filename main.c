@@ -1,5 +1,6 @@
 #include <iostream>
 using namespace std;
+#include "sorts.h"
 
 int main(){
 int ar[]={5,4,42,33,15,2,8,7,9,10};
