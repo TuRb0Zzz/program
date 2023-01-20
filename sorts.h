@@ -4,5 +4,6 @@ using namespace std;
 #define SORTS_H
 
 void insertionSort(int* ar,int  size);
+void bubbleSort(int* ar,int size);
 
 #endif

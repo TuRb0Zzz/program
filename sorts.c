@@ -25,3 +25,18 @@ void insertionSort(int* ar,int  size){
         }
     }
 }
+
+
+
+void bubbleSort(int* ar,int size){
+    int num;
+    for(int s=size;s>0;s--){
+        for(int i=0;i<size-1;i++){
+            if (ar[i]<ar[i+1]){
+                num = ar[i];
+                ar[i]=ar[i+1];
+                ar[i+1]=num;
+            }
+        }
+    }
+}
