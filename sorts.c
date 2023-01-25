@@ -4,7 +4,7 @@ using namespace std;
 
 
 void insertionSort(int* ar,int  size){
-    int num;	//желательно все переменные инициализировать.....
+    int num;
     int pos;
     int con;
     for(int i = 1; i < size; i++){
@@ -42,7 +42,7 @@ void bubbleSort(int* ar,int size){
 
 
 void showar(int* ar,int size){
-    for (int i=0;i<size;i++){
+    for (int i = 0;i < size; i++){
         cout << ar[i] << " ";
     }
 }
@@ -50,11 +50,11 @@ void showar(int* ar,int size){
 
 void selectionSort(int* ar, int size)
 {
-    int i,j,maxindex;
-    for(i=0;i<size;i++)
+    int i , j ,maxindex;
+    for(i = 0; i < size; i++)
     {
         maxindex = i;
-        for(j=i+1;j<size;j++)
+        for(j = i+1;j < size; j++)
             if (ar[j] > ar[maxindex])
                 maxindex = j;
         swap(ar[i],ar[maxindex]);
@@ -62,8 +62,8 @@ void selectionSort(int* ar, int size)
 }
 
 int getMax(int* ar,int size){
-    int  max=ar[0];
-    for (int i=0;i<size;i++){
+    int  max = ar[0];
+    for (int i = 0;i < size; i++){
         if (ar[i]>max){max=ar[i];}
     }
     return(max);
@@ -71,15 +71,15 @@ int getMax(int* ar,int size){
 
 
 int getMin(int* ar,int size){
-    int  min=ar[0];
-    for (int i=0;i<size;i++){
+    int  min = ar[0];
+    for (int i = 0;i < size; i++){
         if (ar[i]<min){min=ar[i];}
     }
     return(min);
 }
 
 void countsort(int *ar, int size){
-    int maxel=getMax(ar,size);
+    int maxel = getMax(ar,size);
     int array[maxel+1];
 	for (int i = 0; i <maxel+1; i++){
 		array[i] = 0;
@@ -90,7 +90,7 @@ void countsort(int *ar, int size){
 		array[ar[i]]++;
 	}
     
-    int k=0;
+    int k = 0;
     for (int i = 0; i <= maxel; i++){
 		for (int j = k; j < k + array[i]; j++){
 			ar[j] = i;
