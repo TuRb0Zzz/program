@@ -42,8 +42,22 @@ void bubbleSort(int* ar,int size){
 
 
 void showar(int* ar,int size){
-    for (int i=0;i<size;n++){
-        cout << ar[n] << " ";
+    for (int i=0;i<size;i++){
+        cout << ar[i] << " ";
+    }
+}
+
+
+void selectionSort(int* ar, int size)
+{
+    int i,j,maxindex;
+    for(i=0;i<size;i++)
+    {
+        maxindex = i;
+        for(j=i+1;j<size;j++)
+            if (ar[j] > ar[maxindex])
+                maxindex = j;
+        swap(ar[i],ar[maxindex]);
     }
 }
 

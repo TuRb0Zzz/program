@@ -12,25 +12,42 @@ void testInsertionSorts() {
 		bool ok = true;
 		for (int i = 0; i < 9; i++) {
 			if (etalonAr[i] != ar[i]) {
-				std::cerr << "test 1 FAILED" << std::endl;
+                                std::cerr << "insertionsort FAILED" << std::endl;
 				ok = false;
 				break;
 			}
 		}
 		if (ok == true) {
-			std::cerr << "test1 OK" << std::endl;
+                        std::cerr << "insertionsort is OK" << std::endl;
 		}
 
 	}
 }
 
+void testselectionSort() {
+        {	//test 1
+                int ar[] = {10,5,50,7,4,3,8,2,1};
+                int etalonAr[] = {50,10,8,7,5,4,3,2,1};
+                selectionSort(ar, 9);
+                bool ok = true;
+                for (int i = 0; i < 9; i++) {
+                        if (etalonAr[i] != ar[i]) {
+                                std::cerr << "selectionsort  FAILED" << std::endl;
+                                ok = false;
+                                break;
+                        }
+                }
+                if (ok == true) {
+                        std::cerr << "selectionsort is  OK" << std::endl;
+                }
+
+        }
+}
+
 int main(){
-	testInsertionSorts();
-	int ar[] = {5,4,42,33,15,2,8,7,9,10};
+        testInsertionSorts();
 
-	insertionSort(ar,10);
-
-	showar(ar,10);
+        testselectionSort();
 
 	std::cout << std::endl;	//пожалуйста пишите эту строчку...., либо добавляйте символ "\n" - это перевод каретки
 	return 0;
