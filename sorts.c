@@ -61,3 +61,40 @@ void selectionSort(int* ar, int size)
     }
 }
 
+int getMax(int* ar,int size){
+    int  max=ar[0];
+    for (int i=0;i<size;i++){
+        if (ar[i]>max){max=ar[i];}
+    }
+    return(max);
+}
+
+
+int getMin(int* ar,int size){
+    int  min=ar[0];
+    for (int i=0;i<size;i++){
+        if (ar[i]<min){min=ar[i];}
+    }
+    return(min);
+}
+
+void countsort(int *ar, int size){
+    int maxel=getMax(ar,size);
+    int array[maxel+1];
+	for (int i = 0; i <maxel+1; i++){
+		array[i] = 0;
+	}
+	
+	
+    for (int i = 0; i < size; i++){
+		array[ar[i]]++;
+	}
+    
+    int k=0;
+    for (int i = 0; i <= maxel; i++){
+		for (int j = k; j < k + array[i]; j++){
+			ar[j] = i;
+		}
+		k += array[i];
+	}
+}
