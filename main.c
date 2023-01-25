@@ -2,7 +2,7 @@
 using namespace std;
 #include "sorts.h"
 
-// надо соблюдать отступы... при несоблюдении отсnупов? код больше смотреть не буду
+
 
 void testInsertionSorts() {
 	{	//test 1
@@ -30,11 +30,7 @@ int main(){
 
 	insertionSort(ar,10);
 
-//это вынести в функцию....
-	for(int i = 0; i < 10; i++){
-        	cout << ar[i] << " ";
-	}
-//---------------------
+	showar(ar,10);
 
 	std::cout << std::endl;	//пожалуйста пишите эту строчку...., либо добавляйте символ "\n" - это перевод каретки
 	return 0;

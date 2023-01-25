@@ -32,7 +32,6 @@ void bubbleSort(int* ar,int size){
     for(int s = size; s > 0; s--){
         for(int i = 0; i < size-1; i++){
             if (ar[i] < ar[i+1]){
-//сделать функцию....
                 num = ar[i];
                 ar[i] = ar[i+1];
                 ar[i+1] = num;
@@ -40,3 +39,11 @@ void bubbleSort(int* ar,int size){
         }
     }
 }
+
+
+void showar(int* ar,int size){
+    for (int i=0;i<size;n++){
+        cout << ar[n] << " ";
+    }
+}
+
