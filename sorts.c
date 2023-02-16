@@ -3,6 +3,7 @@ using namespace std;
 #include "sorts.h"
 
 
+
 void insertionSort(int* ar,int  size){
     int num;
     int pos;
@@ -15,7 +16,7 @@ void insertionSort(int* ar,int  size){
                 if (num > ar[j-1]){
                     con = j-1;
                 }
-                else { //else плохо.... придумай как можно обойтись без else... маленькая подсказка: поменять условие....
+                else {
                     break;
                 }
             }
@@ -40,15 +41,6 @@ void bubbleSort(int* ar,int size){
     }
 }
 
-
-void showar(int* ar,int size){
-    for (int i = 0;i < size; i++){
-        cout << ar[i] << " ";
-    }
-    cout<<endl;
-}
-
-
 void selectionSort(int* ar, int size)
 {
     int i , j ,maxindex;
@@ -62,22 +54,6 @@ void selectionSort(int* ar, int size)
     }
 }
 
-int getMax(int* ar,int size){
-    int  max = ar[0];
-    for (int i = 0;i < size; i++){
-        if (ar[i]>max){max=ar[i];}
-    }
-    return(max);
-}
-
-
-int getMin(int* ar,int size){
-    int  min = ar[0];
-    for (int i = 0;i < size; i++){
-        if (ar[i]<min){min=ar[i];}
-    }
-    return(min);
-}
 
 void countsort(int *ar, int size){
     int maxel = getMax(ar,size);
@@ -98,4 +74,44 @@ void countsort(int *ar, int size){
 		}
 		k += array[i];
 	}
+}static void merge(int* ar, int size, int central) {
+    int left = 0;
+    int right = central;
+    int* arTemp = new int [size];
+    int indexTemp = 0;
+
+    while (left < central && right < size) {
+        while(ar[left] <= ar[right] && left < central) {
+            arTemp[indexTemp++] = ar[left++];
+        }
+        while(ar[left] > ar[right] && right < size) {
+            arTemp[indexTemp] = ar[right];
+            indexTemp++;
+            right++;
+        }
+    }
+
+    while (left < central) {
+        arTemp[indexTemp++] = ar[left++];
+    }
+    while (right < size) {
+        arTemp[indexTemp++] = ar[right++];
+    }
+
+    memcpy(ar, arTemp, size * sizeof(int));
+
+    delete [] arTemp;
 }
+
+void mergeSort(int* ar, int size) {
+    if (size <= 1) {
+        return;
+    }
+    mergeSort(&ar[0], size >> 1);
+    mergeSort(&ar[size >> 1], size - (size >> 1));
+
+    merge(ar, size, size >> 1);
+}
+
+
+
